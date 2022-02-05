@@ -1,0 +1,21 @@
+bu komudu main.js veya index.js ye atın!!! 
+
+var rpc = require("discord-rpc")
+const client = new rpc.Client({ transport: 'ipc' })
+client.on('ready', () => {
+client.request('SET_ACTIVITY', {
+pid: process.pid,
+activity : {
+details : "Kerem | Hakanycg",//değiştirebilirsiniz.
+assets : {
+large_image : "büyükresim.png",//resim ismi
+large_text : "BÜYÜK RESMİN ÜSTÜNDEKİ YAZI",//değiştirebilirsiniz.
+small_image : "küçükresim.png",//resim ismi
+small_text : "KÜÇÜK RESMİN ÜSTÜNDEKİ YAZI"//değiştirebilirsiniz.
+},
+buttons : [{label : "BUTONA YAZILI OLACAK NİCK" , url : "YÖNLENDİRİLECEK URL"}],//istediğiniz gibi değiştirebilirsiniz.
+}
+})
+})
+console.log("Bağlandım")//değiştirebilirsiniz. istediğiniz gibi
+client.login({ clientId : "BOTIDSİ" }).catch(console.error);//botunuzun idsini girmezseniz rpc çalışmaz.
